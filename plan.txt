@@ -1,0 +1,6 @@
+design a simple ui that navigate in one page using tailwind css 
+should be number and description as well able as well two button with one delete and other on completed 
+last one button is also that clear all at once 
+from the input field take the items and add to the screen
+also save it local storage so that it will stay there after refreshing 
+try lottie animation to make it more nice

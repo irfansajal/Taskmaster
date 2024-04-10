@@ -4,3 +4,7 @@ last one button is also that clear all at once
 from the input field take the items and add to the screen
 also save it local storage so that it will stay there after refreshing 
 try lottie animation to make it more nice
+probably add some picture 
+add a real time watch 
+add a marque
+maybe add todays summary and importants notes

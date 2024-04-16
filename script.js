@@ -179,3 +179,8 @@ window.onload = function () {
 
 
 
+// burger menu
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.style.display = navLinks.style.display === 'block' ? 'none' : 'block';
+}

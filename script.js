@@ -1,3 +1,14 @@
+// burger menu
+let burgerMenu = document.getElementById('burger-menu');
+
+let overlay = document.getElementById('menu');
+
+burgerMenu.addEventListener('click', function () {
+  this.classList.toggle("close");
+  overlay.classList.toggle("overlay");
+});
+
+// clock
 function myClock() {
   setTimeout(function () {
     const d = new Date();
@@ -8,9 +19,10 @@ function myClock() {
 }
 myClock();
 
+
 let count = 0;
 let task = []
-console.log(task);
+//console.log(task);
 
 const inputValue = document.getElementById('add-value').addEventListener('click', function () {
   count += 1
@@ -179,8 +191,5 @@ window.onload = function () {
 
 
 
-// burger menu
-function toggleMenu() {
-  const navLinks = document.querySelector('.nav-links');
-  navLinks.style.display = navLinks.style.display === 'block' ? 'none' : 'block';
-}
+
+

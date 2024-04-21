@@ -27,14 +27,33 @@
         <div id="menu">
             <ul>
                 <li><a href="/notes/notes.html">Notes</a></li>
-                <li><a href="#">Today's Task</a></li>
+                <li><a href="/index.html">Today's Task</a></li>
             </ul>
         </div>
 
     </div>
 </header>
 <main>
-
+<div class="flex flex-col justify-center items-center my-4">
+    <span id="clock"></span>
+    <p>Today's Summary </p>
+</div>
+<div class="join flex justify-center items-center my-4">
+    <input id="inputField" type="text" placeholder="Type here"
+        class="input input-bordered mr-2 input-secondary w-3/5" />
+    <button id="add-value" class="btn bg-blue-600 btn-accent">Add</button>
+</div>
+<!-- card is here -->
+<div class="card card-side bg-base-100 shadow-xl">
+    <figure><img class="w-2/4 h-4/5 hidden sm:block" src="https://source.unsplash.com/random/?city,night" alt="photo" /></figure>
+    <div class="card-body">
+        <h2 class="card-title">New movie is released!</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic inventore, temporibus, nulla dignissimos quis minus ipsam labore, vero quaerat vitae nam! Ad voluptatibus in cupiditate perspiciatis dicta. Optio exercitationem voluptates voluptatibus autem, nam quo fugiat dignissimos. Fuga veniam quibusdam quaerat omnis eveniet similique commodi recusandae adipisci? Cupiditate dolorem at natus.</p>
+        <div class="card-actions justify-end">
+            <button class="btn btn-warning">Delete</button>
+        </div>
+    </div>
+</div>
 </main>
 <footer class="footer footer-center p-4 bg-base-300 text-base-content">
     <aside>

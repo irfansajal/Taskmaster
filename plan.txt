@@ -8,3 +8,5 @@ probably add some picture
 add a real time watch 
 add a marque
 maybe add todays summary and importants notes
+
+add a enter button when we pressed the enter it must be working

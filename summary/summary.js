@@ -1,39 +1,37 @@
 let summary = []
-// summary
-const summaryValue = document.getElementById('add-value').addEventListener('click', function () {
-    const mySummaryValue = document.getElementById('inputField').value;
-    addSummary(mySummaryValue); // Call addNote function with the note value
-});
+//add summary
+ 
+const summaryValue = document.getElementById('add-value').addEventListener('click',addSummary)
 
-function addSummary(summaryValue) {
-    if (summaryValue === '') {
+function addSummary() {
+    const mySummaryValue = document.getElementById('inputField').value;
+    if (mySummaryValue === '') {
         return
     }
 
     const parent = document.getElementById('Summary-container');
 
-    // Create a new div element for the note
+   
     const div = document.createElement('div');
-     /* div.classList.add('card-body', 'mt-16'); */
-    // Add class for styling if needed 
+   div.classList.add('summary-body')
     div.innerHTML = `
      <div class="card-body">
         <figure><img class="w-2/4 h-4/5 hidden sm:block" src="https://source.unsplash.com/random/?city,night" alt="photo" /></figure>
     
-        <h2 class="card-title">How was your day!</h2>
-        <p>${summaryValue}</p>
+        <h2 class="card-title">My day at a glance!</h2>
+        <p>${mySummaryValue}</p>
         
           <button class='btn-delete'><i class="fa fa-trash mr-8"></i></button>
         </div>
-        
+     
         
     `;
 
-    parent.appendChild(div);
+    parent.appendChild(div); 
 
     document.getElementById('inputField').value = '';
 
-    // Save data, update buttons, etc. (Call other necessary functions)
+   
     saveData();
     deleteButton();
 
@@ -46,20 +44,20 @@ function deleteButton() {
     for (const button of buttons) {
         button.addEventListener('click', function (e) {
             e.stopPropagation();
-            const noteItem = e.target.closest('div');
-            if (noteItem) {
-                noteItem.remove(); // Remove the note from the DOM
-                removeData(noteItem); // Remove the note from local storage
+            const SummaryItem = e.target.closest('.summary-body');
+            if (SummaryItem) {
+                SummaryItem.remove(); 
+                removeData(SummaryItem); 
             }
         });
     }
 }
 
-function removeData(noteItem) {
+function removeData(SummaryItem) {
     const savedSummary = localStorage.getItem('summary');
     if (savedSummary) {
-        // Remove the note content from local storage
-        const updatedSummary = savedSummary.replace(noteItem.outerHTML, '');
+       
+        const updatedSummary = savedSummary.replace(SummaryItem.outerHTML, '');
         localStorage.setItem('summary', updatedSummary);
     }
 }
@@ -70,29 +68,25 @@ function saveData() {
     localStorage.setItem('summary', summary);
 }
 
-// Load data from local storage
+
 function loadData() {
     const savedSummary = localStorage.getItem('summary');
     if (savedSummary) {
         document.getElementById('Summary-container').innerHTML = savedSummary;
-        count = document.querySelectorAll('#Summary-container div ').length;
+        count = document.querySelectorAll('#Summary-container').length;
         deleteButton();
 
 
     }
 }
 
-// Call loadData when the page loads
+// loadData when the page loads
 window.onload = function () {
     loadData();
 }
 
 
 
-
-
-
-// function for the enter key
 
 function keyDown() {
     document.getElementById('inputField').addEventListener('keydown', function (e) {

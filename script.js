@@ -1,12 +1,20 @@
 // burger menu
-let burgerMenu = document.getElementById('burger-menu');
+  const toggle = document.getElementById('toggle');
+  const navLinks = document.getElementById('nav-links');
 
-let overlay = document.getElementById('menu');
+  toggle.addEventListener('click', function () {
+    navLinks.classList.toggle('active');
+  toggle.classList.toggle('active');
+        });
 
-burgerMenu.addEventListener('click', function () {
-  this.classList.toggle("close");
-  overlay.classList.toggle("overlay");
-});
+  // Hide nav-links when clicking outside the navbar on small devices
+  window.addEventListener('touchstart', function (e) {
+            if (!navLinks.contains(e.target) && !toggle.contains(e.target)) {
+    navLinks.classList.remove('active');
+  toggle.classList.remove('active');
+            }
+        });
+
 
 // clock
 function myClock() {
@@ -51,45 +59,6 @@ function addTask() {
 }
 
 
-/*   const inputValue = document.getElementById('add-value').addEventListener('click', function () {
-
-
-    count += 1
-    const myInputValue = document.getElementById('inputField').value
-    if (myInputValue === '') {
-      return alert('Please provide a valid task')
-    }
-    const parent = document.getElementById('content-container')
-    const tr = document.createElement('tr')
-    tr.innerHTML = `
-  <th>${count}</th>
-  <th>${myInputValue}</th>
-  <th>
-   <button class='btn-delete' ><i class="fa fa-trash mr-8 "></i></button>
-  
-   <button class = 'btn-done'><i class="fas fa-check "></i></button>
-  </th>
-  `;
-    parent.appendChild(tr)
-    document.getElementById('inputField').value = ''
-    saveData()
-
-
-    deleteButton()
-    doneFunction()
-
-
-
-
-
-  }) */
-
-
-
-
-
-/* ------------------- */
-
 function deleteButton() {
   const buttons = document.querySelectorAll('.btn-delete')
   for (const elements of buttons) {
@@ -99,8 +68,6 @@ function deleteButton() {
       const removeItem = e.target.closest('tr')
       if (removeItem) {
         removeItem.style.display = 'none'
-
-        // done differently
         const taskContentToRemove = removeItem.innerHTML;
         removeData(taskContentToRemove)
         loadData()
@@ -184,13 +151,13 @@ function doneFunction() {
 }
 
 
-// Save data to local storage
+// Save data
 function saveData() {
   const tasks = document.getElementById('content-container').innerHTML;
   localStorage.setItem('tasks', tasks);
 }
 
-// Load data from local storage
+// Load data 
 function loadData() {
   const savedTasks = localStorage.getItem('tasks');
   if (savedTasks) {
@@ -202,7 +169,7 @@ function loadData() {
   }
 }
 
-// Call loadData when the page loads
+
 window.onload = function () {
   loadData();
 }
@@ -210,22 +177,16 @@ window.onload = function () {
 
 
   function removeData(taskContentToRemove) {
-  // Retrieve the stored HTML string from local storage
   const storedTasks = localStorage.getItem('tasks');
 
   if (storedTasks) {
-    // Remove the task content from the stored HTML string
     const modifiedTasks = storedTasks.replace(taskContentToRemove, '');
-
-    // Update local storage with modified data
     localStorage.setItem('tasks', modifiedTasks);
-
-    // Update the displayed tasks
     document.getElementById('content-container').innerHTML = modifiedTasks;
   }
 }  
 
-// function for the enter key 
+
 
  function keyDown() {
   document.getElementById('inputField').addEventListener('keydown', function (e) {

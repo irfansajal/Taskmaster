@@ -19,64 +19,67 @@
 
 <body>
   <header>
-    <div class="bg-base-300 flex justify-between ">
-      <img class="h-16" src="./animation/Turquoise Pandas.gif" alt="" />
-      
-            <div id="burger-menu">
-              <span></span>
-             </div>
-            
-            <div id="menu">
-              <ul>
-                <li><a href="/notes/notes.html">Notes</a></li>
-                <li><a href="/summary/summary.html">Today's Summary</a></li>
-              </ul>
-            </div>
-      
-    </div>
+
+    <nav class="custom-bar bg-base-300">
+      <div><img class="h-16" src="/animation/Turquoise Pandas.gif" alt=""></div>
+      <div class="taggle" id="toggle">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/notes/notes.html">Notes</a></li>
+        <li><a href="/summary/summary.html">Summary</a></li>
+      </ul>
+    </nav>
+
   </header>
+
+
+
   <main>
 
-  <div>
+    <div>
       <div class="flex flex-col justify-center items-center my-4">
         <span id="clock"></span>
         <p>Today's Task Highlights </p>
       </div>
-      
+
       <div class="join flex justify-center items-center my-4">
-        <input id="inputField" type="text" placeholder="Type here" class="input input-bordered mr-2 input-secondary w-3/5" />
+        <input id="inputField" type="text" placeholder="Type here"
+          class="input input-bordered mr-2 input-secondary w-3/5" />
         <button id="add-value" class="btn bg-blue-600 btn-accent">Add</button>
       </div>
-  </div>
+    </div>
 
     <!-- table -->
-  
-   <div>
-    <div class="overflow-x-auto flex justify-center items-center my-8">
-      <table class="table w-5/6 ">
-        <!-- head -->
-        <thead id="content-container">
-          <tr>
-            <th>task</th>
-            <th>detail</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-      </table>
-    
-    
+
+    <div>
+      <div class="overflow-x-auto flex justify-center items-center my-8">
+        <table class="table w-5/6 ">
+          <!-- head -->
+          <thead id="content-container">
+            <tr>
+              <th>Number</th>
+              <th>detail</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+        </table>
+
+
+      </div>
+      <div class="flex justify-center ">
+        <button id="clear all" class="btn bg-red-600 btn-xs sm:btn-sm md:btn-md lg:btn-lg ">Clear All</button>
+      </div>
     </div>
-    <div class="flex justify-center ">
-      <button id="clear all" class="btn bg-red-600 btn-xs sm:btn-sm md:btn-md lg:btn-lg ">Clear All</button>
-    </div>
-   </div>
-  
+
 
   </main>
   <footer class="footer footer-center p-4 bg-base-300 text-base-content">
     <aside>
-        <p class="lg:text-xl sm:text-sm">Taskmaster Powered by&nbsp;<span class="text-violet-800">Turquoise
-            Pandas</span></span> </p>
+      <p class="lg:text-xl sm:text-sm">Taskmaster Powered by&nbsp;<span class="text-violet-800">Turquoise
+          Pandas</span></span> </p>
       <p>Copyright © 2024 - All right reserved by Turquoise Pandas</p>
       <p>build by Irfan</p>
     </aside>

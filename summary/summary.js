@@ -45,10 +45,18 @@ function deleteButton() {
         button.addEventListener('click', function (e) {
             e.stopPropagation();
             const SummaryItem = e.target.closest('.summary-body');
-            if (SummaryItem) {
-                SummaryItem.remove();
-                removeData(SummaryItem);
+            let answer = window.confirm('Press ok to delete')
+            if(answer){
+                if (SummaryItem) {
+
+                    SummaryItem.remove()
+                    removeData(SummaryItem)
+
+                }
+
             }
+            
+            
         });
     }
 }

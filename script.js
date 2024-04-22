@@ -22,17 +22,46 @@ myClock();
 
 let count = 0;
 let task = []
-//console.log(task);
 
-const inputValue = document.getElementById('add-value').addEventListener('click', function () {
-  count += 1
-  const myInputValue = document.getElementById('inputField').value
+
+// add task
+const inputValue = document.getElementById('add-value').addEventListener('click', addTask);
+
+function addTask() {
+  count += 1;
+  const myInputValue = document.getElementById('inputField').value;
   if (myInputValue === '') {
-    return alert('Please provide a valid task')
+    return alert('Please write something!');
   }
-  const parent = document.getElementById('content-container')
-  const tr = document.createElement('tr')
+  const parent = document.getElementById('content-container');
+  const tr = document.createElement('tr');
   tr.innerHTML = `
+        <th>${count}</th>
+        <th>${myInputValue}</th>
+        <th>
+            <button class='btn-delete'><i class="fa fa-trash mr-8"></i></button>
+            <button class='btn-done'><i class="fas fa-check"></i></button>
+        </th>
+    `;
+  parent.appendChild(tr);
+  document.getElementById('inputField').value = '';
+  saveData();
+  deleteButton();
+  doneFunction();
+}
+
+
+/*   const inputValue = document.getElementById('add-value').addEventListener('click', function () {
+
+
+    count += 1
+    const myInputValue = document.getElementById('inputField').value
+    if (myInputValue === '') {
+      return alert('Please provide a valid task')
+    }
+    const parent = document.getElementById('content-container')
+    const tr = document.createElement('tr')
+    tr.innerHTML = `
   <th>${count}</th>
   <th>${myInputValue}</th>
   <th>
@@ -41,17 +70,25 @@ const inputValue = document.getElementById('add-value').addEventListener('click'
    <button class = 'btn-done'><i class="fas fa-check "></i></button>
   </th>
   `;
-  parent.appendChild(tr)
-  document.getElementById('inputField').value = ''
-  saveData()
-
-  
-  deleteButton()
-  doneFunction()
-  
-})
+    parent.appendChild(tr)
+    document.getElementById('inputField').value = ''
+    saveData()
 
 
+    deleteButton()
+    doneFunction()
+
+
+
+
+
+  }) */
+
+
+
+
+
+/* ------------------- */
 
 function deleteButton() {
   const buttons = document.querySelectorAll('.btn-delete')
@@ -82,7 +119,7 @@ function deleteAll() {
     const removeItem = e.target.parentNode.parentNode
     if (removeItem) {
       removeItem.style.display = 'none'
-      localStorage.clear()
+      localStorage.removeItem('tasks')
       location.reload()
     }
 
@@ -145,7 +182,7 @@ function doneFunction() {
     })
   }
 }
-//  gpt code form here 
+
 
 // Save data to local storage
 function saveData() {
@@ -188,6 +225,17 @@ window.onload = function () {
   }
 }  
 
+// function for the enter key 
+
+ function keyDown() {
+  document.getElementById('inputField').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      addTask()
+      
+    }
+  });
+} 
+keyDown()
 
 
 

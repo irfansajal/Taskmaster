@@ -13,7 +13,6 @@ function addNote() {
     
     const div = document.createElement('div');
      div.classList.add('card-body','mt-16');
-      // Add class for styling if needed 
     div.innerHTML = `
      
         <div class="card-actions justify-end">
@@ -28,7 +27,6 @@ function addNote() {
 
     document.getElementById('inputField').value = '';
 
-    // Save data, update buttons, etc. (Call other necessary functions)
     saveData();
     deleteButton();
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,49 +16,51 @@
     <link rel="stylesheet" href="/style.css">
     <title>Taskmaster</title>
 </head>
+
 <body>
-<header>
+    <header>
 
-    <nav class="custom-bar bg-base-300">
-        <div><img class="h-16" src="/animation/Turquoise Pandas.gif" alt=""></div>
-        <div class="taggle" id="toggle">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
+        <nav class="custom-bar bg-base-300">
+            <div><img class="h-16" src="/animation/Turquoise Pandas.gif" alt=""></div>
+            <div class="taggle" id="toggle">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/notes/notes.html">Notes</a></li>
+                <li><a href="/index.html">standup</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        <div class="flex flex-col justify-center items-center my-4">
+            <span id="clock"></span>
+            <p>Today's Summary </p>
         </div>
-        <ul class="nav-links" id="nav-links">
-        <li><a href="/notes/notes.html">Notes</a></li>
-        <li><a href="/index.html">standup</a></li>
-        </ul>
-    </nav>
+        <div class="join flex justify-center items-center my-4">
+            <input id="inputField" type="text" placeholder="Type here"
+                class="input input-bordered mr-2 input-secondary w-3/5" />
+            <button id="add-value" class="btn bg-blue-600 btn-accent">Add</button>
+        </div>
+        <!-- card is here -->
+        <div id="Summary-container" class="card bg-base-100 shadow-xl">
 
-</header>
-
-<main>
-<div class="flex flex-col justify-center items-center my-4">
-    <span id="clock"></span>
-    <p>Today's Summary </p>
-</div>
-<div class="join flex justify-center items-center my-4">
-    <input id="inputField" type="text" placeholder="Type here"
-        class="input input-bordered mr-2 input-secondary w-3/5" />
-    <button id="add-value" class="btn bg-blue-600 btn-accent">Add</button>
-</div>
-<!-- card is here -->
-<div id="Summary-container" class="card card-side bg-base-100 shadow-xl">
- 
-</div>
-</main>
-<footer class="footer footer-center p-4 bg-base-300 text-base-content">
-    <aside>
-        <p class="lg:text-xl sm:text-sm">Taskmaster Powered by&nbsp;<span class="text-violet-800">Turquoise
-                Pandas</span></span> </p>
-        <p>Copyright © 2024 - All right reserved by Turquoise Pandas</p>
-        <p>build by Irfan</p>
-    </aside>
-</footer>
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="/script.js"></script>
-<script src="/summary/summary.js"></script>
+        </div>
+    </main>
+    <footer class="footer footer-center p-4 bg-base-300 text-base-content">
+        <aside>
+            <p class="lg:text-xl sm:text-sm">Taskmaster Powered by&nbsp;<span class="text-violet-800">Turquoise
+                    Pandas</span></span> </p>
+            <p>Copyright © 2024 - All right reserved by Turquoise Pandas</p>
+            <p>build by Irfan</p>
+        </aside>
+    </footer>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/script.js"></script>
+    <script src="/summary/summary.js"></script>
 </body>
+
 </html>
